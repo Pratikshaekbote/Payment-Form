@@ -1,18 +1,31 @@
 .heading
 {
   color: #FFF4F4;   
+  text-align: center;
 }
 
+h2{
+	text-align: center;
+}
+
+body{
+	background-image: url('back\ 2.jpg');
+	background-attachment: fixed;
+    background-size: cover;
+}
 
 .contact-info, .payment-info
 {
     max-width: 450px;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	position: relative;
+	left: 33%;
 }
 
 .all
 {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; 
+
 }
 
 .contact-info fieldset, .payment-info fieldset
@@ -45,4 +58,7 @@
 	font-weight: bold;
 }
 
+.confirm{
+	margin-left: 30%;
+}
 
