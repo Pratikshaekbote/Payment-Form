@@ -7,50 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylepayment.css">
     <title>Payment Form</title>
-
-    <script>
-        function validate() {
-            var n = document.getElementById("name");
-            if (n.value == "") {
-                alert("Name not entered");
-                n.style.border = "2px solid red";
-                return false;
-            }
-            else {
-                if (patt_name.test(n.value)) {
-                    alert("Data submitted");
-                    return true;
-                }
-                else {
-                    alert("Not in format");
-                    n.style.border = "2px solid red";
-                    return false;
-                }
-            }
-        }
-    </script>
-
 </head>
+
 <!-- background="back 2.jpg" -->
 <body  >
     <form name="form1" onsubmit="return validate()" action="">
         <div class="all">
             <div class="heading">
-                <h1>Payment Form</h1>
-                <p>Required fields *</p>
+                <h1>&#10071;Payment Form&#10071;</h1>
             </div>
 
             <div class="contact-info">
                 <fieldset>
-                    <h2>Contact Information</h2>
+                    <h2>Contact Information &#128222;</h2>
+                    <i><h5>Required fields *</h5></i>
                     <p>Name: * <input type="text" name="name" id="name" maxlength="15"
                             pattern="(^[A-Za-z]+\s[A-Za-z]+$)" required></p>
 
-                    <p>Contact Number: * <input type="text" value="+91" name="contact" maxlength="10"
-                            pattern="^([7-9][0-9]{9})" required> </p>
+                   <!--<p>Contact Number: * <input type="text" value="+91" name="contact" maxlength="10"
+                            pattern="^([7-9][0-9]{9})" required> </p> --> 
+                    
+                    <p>Contact Number: *<input id="dummynum" type="text" placeholder="Ex 8623056767"></p>
+                    
+                    <input name="contact" id="realnum" type="hidden" value="+91" maxlength="10"
+                            pattern="^([7-9][0-9]{9})">
 
-                    <p>Customer ID: * <input type="text" value="CUSTID" name="customerid" maxlength="8"
-                            pattern="[a-zA-Z0-9]+"></p>
+                   <!-- <p>Customer ID: * <input type="text" value="CUSTID"  name="customerid" maxlength="8"
+                            pattern="[a-zA-Z0-9]+"></p> -->
+
+                   <p>Customer ID: *<input id="dummyid" type="text" placeholder="Enter your id"></p> 
+                   
+                    <input name="customerid" id="customerid" type="hidden" value="CUSTID" maxlength="8"
+                            pattern="[a-zA-Z0-9]+">
+
 
                     <p>Age: <input type="number" min="15" max="120"></p>
 
@@ -81,10 +70,10 @@
 
             <div class="payment-info">
                 <fieldset>
-                    <h2>Payment Information</h2>
+                    <h2>Payment Information &#128179;</h2>
                     <p>Card Type:
                         <select name="card_type" id="card_type">
-                            <option value="">--Select a Card Type--2</option>
+                            <option value="">--Select a Card Type--</option>
                             <option value="visa">Visa</option>
                             <option value="rupay">Rupay</option>
                             <option value="mastercard">Matercard</option>
@@ -103,7 +92,7 @@
 
                 <br>
                 <div class="confirm">
-                    <input type="submit" name="confirm" value="confirm">
+                    <input type="submit" name="confirm" value="Confirm">
                     <input type="submit" value="Pay now">
                 </div>
                 
@@ -111,6 +100,38 @@
     </form>
     </div>
 
+    <script>
+
+        document.getElementById('dummyid').onchange=function(){
+            var user_input = document.getElementById('dummyid').value();
+            document.getElementById('customerid').value = user_input;
+        }
+
+        document.getElementById('dummynum').onchange=function(){
+            var user_input = document.getElementById('dummynum').value();
+            document.getElementById('realnum').value = user_input;
+        }
+
+        function validate() {
+            var n = document.getElementById("name");
+            if (n.value == "") {
+                alert("Name not entered");
+                n.style.border = "2px solid red";
+                return false;
+            }
+            else {
+                if (patt_name.test(n.value)) {
+                    alert("Data submitted");
+                    return true;
+                }
+                else {
+                    alert("Not in format");
+                    n.style.border = "2px solid red";
+                    return false;
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
