@@ -12,7 +12,7 @@ h2 {
 }
 
 body {
-  background-image: url("back\ 2.jpg");
+  background-image: url("payment.jpg");
   background-attachment: fixed;
   background-size: cover;
 }
@@ -37,7 +37,7 @@ body {
   margin: 0px 0px 10px 0px;
   border: 1px solid #ffd2d2;
   padding: 20px;
-  background: #fff4f4;
+  background: #fff4f4 0.9;
   box-shadow: inset 0px 0px 15px #ffe5e5;
   -moz-box-shadow: inset 0px 0px 15px #ffe5e5;
   -webkit-box-shadow: inset 0px 0px 15px #ffe5e5;
